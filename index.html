@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -18,7 +18,12 @@
       <div class="logo">
         <a href="index.html">CPJ <span>🪳</span></a>
       </div>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -83,6 +88,42 @@
     </div>
   </section>
 
+  <section>
+    <div class="container">
+      <p class="section-label">Follow the Movement</p>
+      <h2 class="section-title">Latest from Instagram</h2>
+      <p class="section-desc">We're most active on Instagram. Follow us for updates, memes, and action calls.</p>
+      <div class="ig-follow-card" style="margin-top:32px;">
+        <div class="ig-icon">📷</div>
+        <div class="ig-text">
+          <h4>@cjpnortheastparty</h4>
+          <p>DM us tips, questions, or just say hi. We reply to every message.</p>
+        </div>
+        <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener" class="btn btn-primary">Follow</a>
+      </div>
+      <div class="instagram-grid">
+        <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener">
+          <div class="ig-placeholder">🪳</div>
+        </a>
+        <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener">
+          <div class="ig-placeholder">✊</div>
+        </a>
+        <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener">
+          <div class="ig-placeholder">🔍</div>
+        </a>
+        <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener">
+          <div class="ig-placeholder">💼</div>
+        </a>
+        <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener">
+          <div class="ig-placeholder">📢</div>
+        </a>
+        <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener">
+          <div class="ig-placeholder">⚖️</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-section">
     <div class="container">
       <h2>They called us cockroaches.</h2>
@@ -93,6 +134,12 @@
       </div>
     </div>
   </section>
+
+  <div class="share-bar">
+    <a href="https://wa.me/?text=Cockroach%20Janta%20Party%20🪳%20-%20Join%20the%20movement%21%20https%3A%2F%2Famannotop.github.io%2Fcpj-website%2F" target="_blank" rel="noopener" class="share-btn whatsapp" aria-label="Share on WhatsApp">💬</a>
+    <a href="https://twitter.com/intent/tweet?text=Cockroach%20Janta%20Party%20🪳%20-%20Join%20the%20movement%21&url=https%3A%2F%2Famannotop.github.io%2Fcpj-website%2F" target="_blank" rel="noopener" class="share-btn x" aria-label="Share on X">𝕏</a>
+    <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener" class="share-btn ig" aria-label="Follow on Instagram">📷</a>
+  </div>
 
   <footer>
     <div class="container">

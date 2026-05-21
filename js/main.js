@@ -10,7 +10,6 @@ if (navToggle) {
     navToggle.setAttribute('aria-expanded', isOpen);
   });
 
-  // Close nav when clicking outside
   document.addEventListener('click', (e) => {
     if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
       navLinks.classList.remove('open');
@@ -19,7 +18,6 @@ if (navToggle) {
     }
   });
 
-  // Close nav on link click
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
@@ -31,16 +29,12 @@ if (navToggle) {
 
 // Header scroll effect
 const header = document.querySelector('header');
-let lastScroll = 0;
-
 window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-  if (currentScroll > 10) {
+  if (window.pageYOffset > 10) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
   }
-  lastScroll = currentScroll;
 }, { passive: true });
 
 // Active nav link
@@ -56,22 +50,24 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 document.querySelectorAll('.issue-topic-header').forEach(header => {
   header.addEventListener('click', () => {
     const topic = header.parentElement;
-    const wasOpen = topic.classList.contains('open');
-    
-    // Close all others
     document.querySelectorAll('.issue-topic.open').forEach(t => {
       if (t !== topic) t.classList.remove('open');
     });
-    
     topic.classList.toggle('open');
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
   });
 });
 
 // Animated counter
 function animateCounter(el, target, suffix = '') {
   let current = 0;
-  const duration = 1500;
-  const step = Math.ceil(target / (duration / 25));
+  const step = Math.ceil(target / 60);
   const interval = setInterval(() => {
     current += step;
     if (current >= target) {
@@ -82,7 +78,6 @@ function animateCounter(el, target, suffix = '') {
   }, 25);
 }
 
-// Intersection observer for counters
 const counters = document.querySelectorAll('.stat-number');
 if (counters.length > 0) {
   const observer = new IntersectionObserver((entries) => {
@@ -123,19 +118,15 @@ if (joinForm) {
     const name = joinForm.querySelector('[name="name"]').value.trim();
     const email = joinForm.querySelector('[name="email"]').value.trim();
     const city = joinForm.querySelector('[name="city"]').value.trim();
-
     if (!name || !email || !city) {
       alert('Please fill in all required fields.');
       return;
     }
-
     const successMsg = document.getElementById('success-msg');
     if (successMsg) {
       successMsg.classList.add('show');
       joinForm.style.display = 'none';
     }
-
-    console.log('Member joined:', { name, email, city });
   });
 }
 
@@ -147,18 +138,52 @@ if (contactForm) {
     const name = contactForm.querySelector('[name="name"]').value.trim();
     const email = contactForm.querySelector('[name="email"]').value.trim();
     const message = contactForm.querySelector('[name="message"]').value.trim();
-
     if (!name || !email || !message) {
       alert('Please fill in all required fields.');
       return;
     }
-
     const successMsg = document.getElementById('contact-success');
     if (successMsg) {
       successMsg.classList.add('show');
       contactForm.style.display = 'none';
     }
   });
+}
+
+// Dark mode toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('cpj-theme', theme);
+  if (themeIcon) {
+    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+  }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', toggleTheme);
+  const saved = localStorage.getItem('cpj-theme');
+  if (saved) {
+    setTheme(saved);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme('dark');
+  }
+}
+
+// Share buttons
+function getPageUrl() {
+  return window.location.href;
+}
+
+function getPageTitle() {
+  return document.title || 'Cockroach Janta Party';
 }
 
 // Smooth scroll for anchor links
@@ -169,15 +194,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       e.preventDefault();
       const headerHeight = document.querySelector('header')?.offsetHeight || 0;
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
     }
   });
 });
 
-// Touch-friendly: prevent double-tap zoom on buttons
+// Touch-friendly prevent double-tap zoom
 if ('ontouchstart' in window) {
   document.querySelectorAll('.btn, .issue-topic-header, .faq-question').forEach(el => {
     el.addEventListener('touchend', (e) => {
