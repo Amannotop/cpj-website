@@ -7,6 +7,108 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-hero {
+      text-align: center;
+      padding: 48px 24px;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 40px;
+    }
+    .contact-hero h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .contact-hero p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .ig-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 32px;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .ig-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(225, 48, 108, 0.3);
+      color: #fff;
+    }
+    .ig-cta .ig-icon {
+      font-size: 1.5rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .contact-info h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+    .faq-section {
+      margin-top: 64px;
+    }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      background: var(--off-white);
+      user-select: none;
+    }
+    .faq-question .toggle {
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-question .toggle {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 20px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      padding: 20px;
+    }
+    .faq-answer p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -22,79 +124,91 @@
         <li><a href="issues.html">Issues</a></li>
         <li><a href="wall.html">Wall</a></li>
         <li><a href="join.html">Join</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </div>
   </header>
 
   <section class="page-hero">
     <div class="container">
-      <h1>Get in Touch</h1>
-      <p>Got a question, a tip, or a story? We want to hear it.</p>
+      <h1>Contact Us</h1>
+      <p>We're one DM away. Reach out anytime.</p>
     </div>
   </section>
 
   <section>
     <div class="container">
+      <div class="contact-hero">
+        <h2>Follow Us on Instagram</h2>
+        <p>This is where we post, interact, and build the movement. Slide into our DMs.</p>
+        <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener" class="ig-cta">
+          <span class="ig-icon">📷</span>
+          @cjpnortheastparty
+        </a>
+      </div>
+
       <div class="contact-grid">
         <div class="contact-info">
-          <h2>Reach Us</h2>
-          <p>We're a distributed Gen Z movement. No office, no bureaucracy — just a swarm of people who care.</p>
+          <h3>Why DM us?</h3>
+          <p>Got a tip, a story, or a question for the government? We read every message. We respond to the ones that matter.</p>
+          <p><strong>What you can DM us:</strong></p>
+          <ul style="list-style: none; margin: 12px 0;">
+            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Corruption tips & evidence</li>
+            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Questions for our next campaign</li>
+            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Local issues in your city</li>
+            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Collaboration & media requests</li>
+            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Just to say hi — we don't bite</li>
+          </ul>
+        </div>
+        <div class="contact-info">
+          <h3>Start a Local Chapter</h3>
+          <p>Want to organize CPJ in your city or college? DM us on Instagram with:</p>
+          <ul style="list-style: none; margin: 12px 0;">
+            <li style="padding: 6px 0; font-size: 0.95rem;">→ Your city / college name</li>
+            <li style="padding: 6px 0; font-size: 0.95rem;">→ Why you want to start a chapter</li>
+            <li style="padding: 6px 0; font-size: 0.95rem;">→ How many people are with you</li>
+          </ul>
+          <p style="margin-top: 16px;">We'll guide you through the setup. No bureaucracy. No fees. Just action.</p>
+          <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 12px;">DM Us Now</a>
+        </div>
+      </div>
 
-          <div class="contact-item">
-            <span class="icon">📧</span>
-            <span class="text">contact@cockroachjantaparty.org</span>
+      <div class="faq-section">
+        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;">Quick Questions?</h2>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is this a real political party?</span>
+            <span class="toggle">▼</span>
           </div>
-          <div class="contact-item">
-            <span class="icon">📷</span>
-            <span class="text"><a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener">@cjpnortheastparty</a></span>
-          </div>
-          <div class="contact-item">
-            <span class="icon">𝕏</span>
-            <span class="text"><a href="https://twitter.com" target="_blank" rel="noopener">@cockroach4india</a></span>
-          </div>
-          <div class="contact-item">
-            <span class="icon">▶️</span>
-            <span class="text"><a href="https://youtube.com" target="_blank" rel="noopener">Cockroach Janta Party</a></span>
-          </div>
-
-          <div style="margin-top: 32px;">
-            <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 8px;">Start a Local Chapter</h4>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">Want to organize CPJ in your city? Email us with your city name and we'll help you get started.</p>
+          <div class="faq-answer">
+            <p>Not yet. We started as a satirical movement born from frustration. But the energy is real, the questions are real, and the people behind it are real. Where it goes next depends on all of us.</p>
           </div>
         </div>
-
-        <div class="form-container">
-          <h3>Send a Message</h3>
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@email.com" required>
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <select id="subject" name="subject">
-                <option value="">Select a topic</option>
-                <option value="question">I have a question for the government</option>
-                <option value="chapter">I want to start a local chapter</option>
-                <option value="collab">Collaboration / Media</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-          </form>
-          <div class="success-msg" id="contact-success">
-            <div class="check">✓</div>
-            <h3>Message sent.</h3>
-            <p>We'll get back to you soon. The swarm is watching.</p>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How can I contribute without joining?</span>
+            <span class="toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Share our posts. Tag us in your stories. Send us tips. Every share is a vote for accountability. You don't need a membership card to be part of this.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Will my DM be anonymous?</span>
+            <span class="toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>If you send us a tip or evidence, we'll keep your identity private unless you say otherwise. We protect our people.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Who runs this?</span>
+            <span class="toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>A distributed network of Gen Z youth across India. No single leader. No party dues. No hidden agenda. Just a swarm of people who are tired of being ignored.</p>
           </div>
         </div>
       </div>
@@ -120,8 +234,6 @@
         <h4>Follow Us</h4>
         <div class="social-links">
           <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener">📷</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener">𝕏</a>
-          <a href="https://youtube.com" target="_blank" rel="noopener">▶️</a>
         </div>
       </div>
       <div class="bottom">
@@ -131,5 +243,12 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
