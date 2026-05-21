@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Public Wall - Every voice matters. Read, react, and add yours to the Cockroach Janta Party.">
+  <meta name="theme-color" content="#111111">
   <title>Public Wall — CPJ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
     .wall-header {
@@ -22,10 +25,15 @@
       gap: 16px;
     }
     .message-card {
-      background: var(--off-white);
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: var(--radius);
       padding: 24px;
+      transition: all var(--transition);
+    }
+    .message-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
     }
     .message-card .meta {
       display: flex;
@@ -34,16 +42,17 @@
       margin-bottom: 12px;
     }
     .message-card .avatar {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: var(--accent);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--white);
+      flex-shrink: 0;
     }
     .message-card .author {
       font-weight: 600;
@@ -67,13 +76,13 @@
       letter-spacing: 1px;
       background: var(--accent-light);
       color: var(--accent);
-      padding: 2px 8px;
+      padding: 4px 10px;
       border-radius: 4px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
     .loading {
       text-align: center;
-      padding: 48px 0;
+      padding: 64px 0;
       color: var(--text-muted);
     }
     .loading .spinner {
@@ -108,14 +117,14 @@
       flex-wrap: wrap;
     }
     .filter-btn {
-      padding: 6px 14px;
+      padding: 8px 16px;
       font-size: 0.8rem;
       font-weight: 600;
       border: 1px solid var(--border);
       border-radius: 20px;
       background: var(--white);
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all var(--transition);
       font-family: inherit;
     }
     .filter-btn:hover,
@@ -123,6 +132,24 @@
       background: var(--accent);
       color: var(--white);
       border-color: var(--accent);
+    }
+    @media (max-width: 575px) {
+      .wall-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .wall-filters {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        flex-wrap: nowrap;
+      }
+      .filter-btn {
+        flex-shrink: 0;
+      }
+      .btn-primary {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -133,12 +160,12 @@
       <div class="logo">
         <a href="index.html">CPJ <span>🪳</span></a>
       </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="issues.html">Issues</a></li>
-        <li><a href="wall.html" class="active">Wall</a></li>
+        <li><a href="wall.html">Wall</a></li>
         <li><a href="join.html">Join</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -191,7 +218,7 @@
       <div>
         <h4>Follow Us</h4>
         <div class="social-links">
-          <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener">📷</a>
+          <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
         </div>
       </div>
       <div class="bottom">
