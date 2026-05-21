@@ -10,108 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .contact-hero {
-      text-align: center;
-      padding: 48px 24px;
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      margin-bottom: 40px;
-    }
-    .contact-hero h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .contact-hero p {
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-    .ig-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 32px;
-      background: var(--ig-gradient);
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all var(--transition);
-    }
-    .ig-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(225, 48, 108, 0.3);
-      color: #fff;
-    }
-    .ig-cta .ig-icon { font-size: 1.5rem; }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 40px;
-    }
-    .contact-info h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .contact-info p {
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-    }
-    .faq-section {
-      margin-top: 64px;
-    }
-    .faq-item {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-bottom: 12px;
-      overflow: hidden;
-      transition: all var(--transition);
-    }
-    .faq-item:hover {
-      border-color: var(--accent);
-    }
-    .faq-question {
-      padding: 16px 20px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      background: var(--off-white);
-      user-select: none;
-    }
-    .faq-question .toggle {
-      color: var(--text-muted);
-      transition: transform var(--transition);
-    }
-    .faq-item.open .faq-question .toggle {
-      transform: rotate(180deg);
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-      padding: 0 20px;
-    }
-    .faq-item.open .faq-answer {
-      max-height: 500px;
-      padding: 20px;
-    }
-    .faq-answer p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-    @media (max-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 <body>
 
@@ -120,7 +18,7 @@
       <div class="logo">
         <a href="index.html">CPJ <span>🪳</span></a>
       </div>
-      <div style="display:flex;align-items:center;gap:12px;">
+      <div class="header-actions">
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
           <span id="theme-icon">🌙</span>
         </button>
@@ -149,7 +47,7 @@
         <h2>Follow Us on Instagram</h2>
         <p>This is where we post, interact, and build the movement. Slide into our DMs.</p>
         <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener" class="ig-cta">
-          <span class="ig-icon">📷</span>
+          <span style="font-size:1.5rem;">📷</span>
           @cjpnortheastparty
         </a>
       </div>
@@ -157,38 +55,38 @@
       <div class="contact-grid">
         <div class="contact-info">
           <h3>Why DM us?</h3>
-          <p>Got a tip, a story, or a question for the government? We read every message. We respond to the ones that matter.</p>
+          <p>Got a tip, a story, or a question for the government? We read every message.</p>
           <p><strong>What you can DM us:</strong></p>
-          <ul style="list-style: none; margin: 12px 0;">
-            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Corruption tips & evidence</li>
-            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Questions for our next campaign</li>
-            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Local issues in your city</li>
-            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Collaboration & media requests</li>
-            <li style="padding: 6px 0; font-size: 0.95rem;">✓ Just to say hi</li>
+          <ul class="contact-features">
+            <li>✓ Corruption tips & evidence</li>
+            <li>✓ Questions for our next campaign</li>
+            <li>✓ Local issues in your city</li>
+            <li>✓ Collaboration & media requests</li>
+            <li>✓ Just to say hi</li>
           </ul>
         </div>
         <div class="contact-info">
           <h3>Start a Local Chapter</h3>
           <p>Want to organize CPJ in your city or college? DM us on Instagram with:</p>
-          <ul style="list-style: none; margin: 12px 0;">
-            <li style="padding: 6px 0; font-size: 0.95rem;">→ Your city / college name</li>
-            <li style="padding: 6px 0; font-size: 0.95rem;">→ Why you want to start a chapter</li>
-            <li style="padding: 6px 0; font-size: 0.95rem;">→ How many people are with you</li>
+          <ul class="contact-chapter-list">
+            <li>→ Your city / college name</li>
+            <li>→ Why you want to start a chapter</li>
+            <li>→ How many people are with you</li>
           </ul>
-          <p style="margin-top: 16px;">We'll guide you through the setup. No bureaucracy. No fees. Just action.</p>
-          <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 12px;">DM Us Now</a>
+          <p style="margin-top:16px;">We'll guide you through the setup. No bureaucracy. No fees.</p>
+          <a href="https://www.instagram.com/cjpnortheastparty" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px;">DM Us Now</a>
         </div>
       </div>
 
       <div class="faq-section">
-        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;">Quick Questions?</h2>
+        <h2>Quick Questions?</h2>
         <div class="faq-item">
           <div class="faq-question">
             <span>Is this a real political party?</span>
             <span class="toggle">▼</span>
           </div>
           <div class="faq-answer">
-            <p>Not yet. We started as a satirical movement born from frustration. But the energy is real, the questions are real, and the people behind it are real. Where it goes next depends on all of us.</p>
+            <p>Not yet. We started as a satirical movement born from frustration. But the energy is real, the questions are real, and the people behind it are real.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -197,7 +95,7 @@
             <span class="toggle">▼</span>
           </div>
           <div class="faq-answer">
-            <p>Share our posts. Tag us in your stories. Send us tips. Every share is a vote for accountability. You don't need a membership card to be part of this.</p>
+            <p>Share our posts. Tag us in your stories. Send us tips. Every share is a vote for accountability.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -206,7 +104,7 @@
             <span class="toggle">▼</span>
           </div>
           <div class="faq-answer">
-            <p>If you send us a tip or evidence, we'll keep your identity private unless you say otherwise. We protect our people.</p>
+            <p>If you send us a tip or evidence, we'll keep your identity private unless you say otherwise.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -215,7 +113,7 @@
             <span class="toggle">▼</span>
           </div>
           <div class="faq-answer">
-            <p>A distributed network of Gen Z youth across India. No single leader. No party dues. No hidden agenda. Just a swarm of people who are tired of being ignored.</p>
+            <p>A distributed network of Gen Z youth across India. No single leader. No party dues. No hidden agenda.</p>
           </div>
         </div>
       </div>
